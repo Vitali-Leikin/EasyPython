@@ -53,6 +53,11 @@ class MyClass:
 
 ### 2. **Именование**
 
+**При создании вашего файла всегда именуйте его по одному шаблону латинскими буквами ваше имя/ник как в Slack + номер задачи(фичи)**
+```
+Пример: VitaliFeat123
+```
+
 | Элемент | Стиль | Пример |
 |---------|-------|--------|
 | Функции | `snake_case` | `calculate_sum()`, `get_user_data()` |
@@ -174,6 +179,7 @@ dev (staging)
 - `feature/*` - новая функциональность
 - `bugfix/*` - исправление багов в develop
 - `hotfix/*` - критичные исправления в production
+- `* your_name`
 
 ### 3. **Правила именования веток**
 
@@ -188,7 +194,7 @@ git checkout -b bugfix/login-validation-error
 git checkout -b hotfix/database-connection-crash
 
 # Отформатировано как: type/brief-description
-# Всегда на английском, kebab-case
+# Всегда на английском.
 ```
 
 ### 4. **Правила коммитов**
@@ -246,11 +252,7 @@ git fetch origin
 git rebase origin/develop
 
 # Запустите все проверки локально
-make lint
-make test
-
 # Убедитесь что все коммиты хорошо сформированы
-git log origin/develop..HEAD
 ```
 
 **Шаблон PR описания:**
@@ -288,23 +290,6 @@ Closes #123
 ```bash
 git clone <repository-url>
 cd repository
-```
-
-### 2. **Установка зависимостей**
-
-```bash
-# Создание виртуального окружения (Python 3.9+)
-python -m venv venv
-
-# Активация виртуального окружения
-# Windows
-venv\Scripts\activate
-# Unix/macOS
-source venv/bin/activate
-
-# Установка зависимостей
-pip install -r requirements.txt
-pip install -r requirements-dev.txt
 ```
 
 ## 👥 Процесс разработки
