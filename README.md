@@ -179,7 +179,7 @@ dev (staging)
 - `feature/*` - новая функциональность
 - `bugfix/*` - исправление багов в develop
 - `hotfix/*` - критичные исправления в production
-- `* your_name`
+- `* your_name_HomeWork_5`
 
 ### 3. **Правила именования веток**
 
