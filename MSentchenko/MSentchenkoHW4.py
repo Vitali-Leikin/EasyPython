@@ -4,7 +4,7 @@
 
 for i in range (0,16):
     print(i)
-    i = i + 1
+
 
 # Задача №2
 #
