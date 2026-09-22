@@ -43,3 +43,38 @@ def spacey(array: list) -> list:
         s += i
         k.append(s)
     return k
+
+def change_letter(text: str) -> str:
+    '''
+    Заменяет буквы на их номер в алфавите, не буквенные символы оставляет как есть
+    :param text: строка
+    :return: строка с замененными буквами
+    '''
+
+    return "".join(str(ord(ch) - 96) if "a" <= ch.lower() <= "z" else ch for ch in text)
+
+def greet_jedi(first: str, last: str) -> str:
+    """
+    Строку сформированную по шаблону: первые три буквы фамилии + первые две буквы имени
+    оба параметра приводятся к виду "Заглавная + строчные"
+    :param first: имя, беруться два первых символа
+    :param last: фамилия, берутся три первых символа
+    :return: строка вида <3 буквы фамилии> <2 буквы имени>
+    """
+    return last[0:3].capitalize() + first[0:2].capitalize()
+
+def start_with_a(text: str) -> str:
+    """
+    Отфильровывает строку, оставляя в ней только слова начинающиеся на букву "а", с учетом регистра
+    :param text: строка из любых символов и букв
+    :return: строку состоящую из слов начинающихся на "а"
+    """
+    return " ".join(w for w in text.split() if w.startswith("а"))
+
+def numbers_more_than_zero(n: int) -> bool:
+    """
+    Проверяет, что все цифры передаваемого числа больше нуля
+    :param n: целое число
+    :return: Возвращает True если все цифры числа > 0: иначе False
+    """
+    return all(int(i) > 0 for i in str(abs(n)))
