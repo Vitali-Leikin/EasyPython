@@ -63,12 +63,14 @@ def task_8(text: str) -> bool:
     """
     return bool(re.search(r"\bрублей\b", text))
 
+
 def task_9(text: str) -> list:
     """
     :param text: строка
     :return: список всех 'abc' которые являются отдельным словом
     """
     return re.findall(r"\babc\b", text)
+
 
 def task_10(text: str) -> str:
     """
@@ -77,3 +79,31 @@ def task_10(text: str) -> str:
     """
     return re.sub(r"\bкот\b", "пес", text)
 
+
+def return_index(text: str):
+    """
+    :param text: строка s = "мама мыла раму, мама мыла пол"
+    :return: Вернет индексы начала всех вхождений слова "мама"
+    """
+    indicates = []
+    for i in re.finditer(r"мама", text):
+        indicates.append(i.start())
+    return indicates
+
+
+def start_and_end_index_of_word(text: str):
+    """
+    :param text: строка s = "abcABCabc"
+    :return: Вернет список кортежей индексов начала и конца каждого вхождения "abc" без учета регистра
+    """
+    return [(i.start(), i.end()) for i in re.finditer(r"abc", text, flags=re.IGNORECASE)]
+
+def ll(text: str):
+    """
+    :param text: строка
+    :return: Вернет список кортежей чисел и их индексов начала формата (10, 7)
+    """
+    result = []
+    for i in re.finditer(r"\d+", text):
+        result.append((int(i.group()), i.start()))
+    return result

@@ -1,3 +1,4 @@
+import re
 def sum_of_elms(array: list) -> float:
     return sum(sum(i) for i in array)
 
@@ -56,3 +57,9 @@ def count_e(text: str) -> int:
 def quantity_words_without_e(array: list) -> int:
     return sum(1 for i in array for j in i if "е" not in j)
 
+def return_start_index(text: str) -> list:
+    """
+    :param text: строка “Посмотрите как Рите нравится ритм”
+    :return: Вернет индексы начала всех подстрок - “рит”, независимо от регистра
+    """
+    return [i.start() for i in re.finditer(r"рит", text, flags=re.IGNORECASE)]
